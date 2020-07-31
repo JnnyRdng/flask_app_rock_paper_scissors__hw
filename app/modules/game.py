@@ -25,5 +25,5 @@ class Game:
                 else:
                     return player2
         else:
-            return "Not a valid input!"
+            return False
 
