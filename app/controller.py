@@ -13,8 +13,12 @@ def play_a_game(choice1, choice2):
     p1 = Player("Player 1", choice1)
     p2 = Player("Player 2", choice2)
     winner = game.play_round(p1, p2)
-    loser = p2 if p1 == winner else p1
-    return render_template("base.html", title="Play Game!", winner=winner, loser=loser)
+    if winner is not None:
+        loser = p2 if p1 == winner else p1
+        return render_template("winner.html", title=f"{winner.name} Wins!", winner=winner, loser=loser)
+    else:
+        return render_template("draw.html", title="It's a draw!", choice=p1.choice)
+        
 
 # @app.route("/paper/rock")
 # def paper_beats_rock():
@@ -40,10 +44,10 @@ def play_a_game(choice1, choice2):
 # def scissors_loses_rock():
 #     return "Player 1 loses playing scissors against rock!"
 
-@app.route("/paper/paper")
-@app.route("/rock/rock")
-@app.route("/scissors/scissors")
-def draw():
-    return "Draw! No one wins!"
+# @app.route("/paper/paper")
+# @app.route("/rock/rock")
+# @app.route("/scissors/scissors")
+# def draw():
+#     return "Draw! No one wins!"
 
 
