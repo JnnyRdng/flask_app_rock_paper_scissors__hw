@@ -2,16 +2,16 @@
 
 {% block content %}
 <article>
-  <form action="/get-choices" method="POST">
-    <input type="hidden" value="rock">
+  <form action="/get-choices" method="post">
+    <input type="hidden" name="move" value="rock">
     <input type="submit" value="Rock">
   </form>
-  <form action="/get-choices" method="POST">
-    <input type="hidden" value="paper">
+  <form action="/get-choices" method="post">
+    <input type="hidden" name="move" value="paper">
     <input type="submit" value="Paper">
   </form>
-  <form action="/get-choices" method="POST">
-    <input type="hidden" value="scissors">
+  <form action="/get-choices" method="post">
+    <input type="hidden" name="move" value="scissors">
     <input type="submit" value="Scissors">
   </form>
 </article>

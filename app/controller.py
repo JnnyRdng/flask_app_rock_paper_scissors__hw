@@ -6,7 +6,7 @@ from app.modules.game import Game
 
 @app.route("/")
 def home_page():
-    return "Rock, Paper, Scissors game!"
+    return render_template("index.html", title="Home")
 
 
 @app.route("/<choice1>/<choice2>")
@@ -25,3 +25,6 @@ def play_a_game(choice1, choice2):
     else:
         return render_template("draw.html", title="It's a draw!", choice=p1.choice)
 
+@app.route("/get-choices", methods=["POST"])
+def get_choices():
+    return request.form["move"]
