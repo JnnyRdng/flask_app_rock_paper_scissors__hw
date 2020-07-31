@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+  <form action="/get-choices" method="POST">
+    <input type="hidden" value="rock">
+    <input type="submit" value="Rock">
+  </form>
+  <form action="/get-choices" method="POST">
+    <input type="hidden" value="paper">
+    <input type="submit" value="Paper">
+  </form>
+  <form action="/get-choices" method="POST">
+    <input type="hidden" value="scissors">
+    <input type="submit" value="Scissors">
+  </form>
+</article>
+
+{% endblock %}
