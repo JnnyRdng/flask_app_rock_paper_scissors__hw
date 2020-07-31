@@ -13,6 +13,9 @@ def paper_beats_rock():
 def rock_beats_scissors():
     return "Player 1 wins playing rock against scissors!"
 
+@app.route("/scissors/paper")
+def scissors_beats_paper():
+    return "Player 1 wins playing scissors against paper!"
 
 
 
