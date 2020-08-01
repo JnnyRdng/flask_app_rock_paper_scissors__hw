@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block style %}
+  {% endblock %}
   <link rel="stylesheet" href="https://use.typekit.net/yxn8qvs.css">
   <title>{{ title }} | RPS</title>
 </head>
@@ -11,6 +13,7 @@
 <body>
   <header>
     <h1><a id="logo" href="/">RPS</a></h1>
+    <h2>{{title}}</h2>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>

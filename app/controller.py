@@ -6,7 +6,7 @@ from app.modules.logic import game, cpu, player, player_name
 
 @app.route("/")
 def home_page():
-    return render_template("welcome.html", title="Home")
+    return render_template("welcome.html", title="Home", player_name=player_name)
 
 @app.route("/play")
 def play_game():
@@ -15,6 +15,13 @@ def play_game():
 @app.route("/about")
 def about_page():
     return render_template("about.html", title="About")
+
+@app.route("/set-name", methods=["POST"])
+def get_player_name():
+    global player_name
+    new_name = request.form["name"]
+    player_name = new_name if new_name != "" else player_name
+    return redirect("/play")
 
 @app.route("/<choice1>/<choice2>")
 def play_a_game(choice1, choice2):
@@ -33,6 +40,7 @@ def play_a_game(choice1, choice2):
 
 @app.route("/get-choices", methods=["POST"])
 def get_choices():
+    print(player_name)
     move = request.form["move"]
     player.name = player_name
     player.choice = move

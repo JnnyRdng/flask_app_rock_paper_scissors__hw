@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<p>
-  You both played {{ choice }}! It's a draw!
-</p>
+<article>
+  <header><h1>No one wins!</h1></header>
+  <p>
+    You both played {{ choice }}! It's a draw!
+  </p>
+  <a href="/play">Play again?</a>
+</article>
 {% endblock %}

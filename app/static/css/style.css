@@ -3,32 +3,37 @@ body {
     margin: 0px;
     font-family: phoreuscherokee, serif;
 }
-body > header {
+
+body>header {
     display: flex;
     background-color: bisque;
     display: grid;
-    grid-template-columns: 2fr 6fr;
+    grid-template-columns: 2fr 2fr 6fr;
     justify-items: center;
+    align-items: center;
 }
 
 #logo {
     color: #2e2e2e;
     text-decoration: none;
+    font-size: 2em;
 }
 
-body > main {
+body>main {
     width: 100%;
     margin: auto;
     background-color: hotpink;
 }
-body > main > article {
+
+body>main>article {
     padding: 10px;
 }
-body > main > article > h2 {
-    text-align:center;
+
+body>main>article>h2 {
+    text-align: center;
 }
 
-body > main > article > section {
+body>main>article>section {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -47,12 +52,15 @@ input[type=submit] {
     outline: none;
     cursor: pointer;
 }
+
 input[type=submit]:hover {
     background-color: darkslateblue;
 }
+
 input[type=submit]:focus {
     border: 2px solid white;
 }
+
 input[type=submit]:active {
     background-color: black;
 }

@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% block style  %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
 {% block content %}
+<section>
+  <img src="{{ url_for('static', filename='img/the_rock.jpg') }}" alt="The Rock">
+  <div>
+    <p><strong>"I'm not going to give you a quote for your website"</strong></p>
+    <blockquote><em>— Dwayne 'The Rock' Johnson</em></blockquote>
+  </div>
+</section>
 
 {% endblock %}
