@@ -1,3 +1,6 @@
+from random import choice
+
+
 class Game:
     def __init__(self):
         self.choices = {}
@@ -27,3 +30,7 @@ class Game:
         else:
             return False
 
+    def decide_cpu_move(self, cpu):
+        move = choice(self.valid_choices)
+        cpu.choice = move
+        return cpu

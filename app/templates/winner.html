@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>
-  {{ winner.name }} beat {{ loser.name }} playing {{ winner.choice }} against {{ loser.choice }}
-</p>
+<article>
+  <header><h1>{{ winner.name }} Wins!</h1></header>
+  <p>
+    {{ winner.name }} beat {{ loser.name }} playing {{ winner.choice }} against {{ loser.choice }}
+  </p>
+</article>
 {% endblock %}

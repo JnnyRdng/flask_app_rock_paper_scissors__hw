@@ -4,12 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://use.typekit.net/yxn8qvs.css">
   <title>{{ title }} | RPS</title>
 </head>
 
 <body>
   <header>
-    <h1>RPS</h1>
+    <h1><a id="logo" href="/">RPS</a></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/play">Play</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
   </header>
   <main>
     {% block content %}
