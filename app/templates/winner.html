@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "results.html" %}
 
-{% block content %}
-<article>
-  <header><h1>{{ winner.name }} wins!</h1></header>
-  <p>
-    {{ winner.name }} beat {{ loser.name }} playing {{ winner.choice }} against {{ loser.choice }}
-  </p>
-  <a href="/play">Play again?</a>
-</article>
+{% block results %}
+<header>
+  <h1>{{ winner.name }} wins!</h1>
+</header>
+<p>
+  {{ winner.name }} beat {{ loser.name }} playing {{ winner.choice }} against {{ loser.choice }}
+</p>
+
 {% endblock %}

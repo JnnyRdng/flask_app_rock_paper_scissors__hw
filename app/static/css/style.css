@@ -1,7 +1,15 @@
+html {
+    height: 100%;
+}
+
 body {
     background-color: ivory;
     margin: 0px;
+    height: 100%;
     font-family: phoreuscherokee, serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* align-items: start; */
 }
 
 body>header {
@@ -21,8 +29,9 @@ body>header {
 
 body>main {
     width: 100%;
-    margin: auto;
-    background-color: hotpink;
+    /* margin: auto; */
+    align-self: start;
+    /* background-color: hotpink; */
 }
 
 body>main>article {
@@ -64,3 +73,20 @@ input[type=submit]:focus {
 input[type=submit]:active {
     background-color: black;
 }
+
+
+
+body>footer {
+    background-color: bisque;
+}
+
+
+#scores {
+    list-style: none;
+    width: 200px;
+}
+#scores>li {
+    display:flex;
+    justify-content: space-between;
+}
+

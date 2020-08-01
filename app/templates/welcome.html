@@ -2,6 +2,26 @@
 
 {% block style %}
 
+<style>
+  body>article>main>article {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  input[type="submit"] {
+    border-radius: 0px;
+    height: initial;
+    width: 100%;
+    font-size: initial;
+  }
+  form {
+    width: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+</style>
+
 {% endblock %}
 
 {% block content %}
@@ -14,21 +34,23 @@
     <h3>What is Rock, Paper, Scissors?</h3>
   </header>
   <main>
-    <h4>It's simple</h4>
-    <h5>Rock beats Scissors</h5>
-    <h5>Scissors beats Paper</h5>
-    <h5>Paper beats Rock</h5>
+    <hgroup>
+      <h4>How do you not know?</h4>
+      <h5>Rock beats Scissors</h5>
+      <h5>Scissors beats Paper</h5>
+      <h5>Paper beats Rock</h5>
+    </hgroup>
+    <section>
+      <h3>Ready to play?</h3>
+      <form action="/set-name" method="post">
+        <div>
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" placeholder="{{ player_name }}">
+        </div>
+        <input type="submit" value="Play!">
+      </form>
+    </section>
   </main>
-  <aside>
-    <h3>Ready to play?</h3>
-    <form action="/set-name" method="post">
-      <div>
-        <label for="name">Enter your name: </label>
-        <input type="text" name="name" placeholder="{{ player_name }}">
-      </div>
-      <input type="submit" value="Play!">
-    </form>
-  </aside>
 </article>
 
 {% endblock %}
