@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, request, redirect
 from app.modules.player import Player
-from app.modules.logic import game, cpu, player, player_name
+from app.modules.logic import game, cpu, player, player_name, sort_scores
 
 
 @app.route("/")
@@ -11,7 +11,7 @@ def home_page():
 
 @app.route("/play")
 def play_game():
-    return render_template("index.html", title="Play!")
+    return render_template("play.html", title="Play", player_name=player_name)
 
 
 @app.route("/about")
@@ -37,7 +37,6 @@ def play_a_game(choice1, choice2):
 
 @app.route("/get-choices", methods=["POST"])
 def get_choices():
-    print(player_name)
     move = request.form["move"]
     player.name = player_name
     player.choice = move
@@ -45,26 +44,36 @@ def get_choices():
     winner = game.play_round(player, cpu)
     return route_winner(winner, player, cpu)
 
+@app.route("/reset-scores")
+def reset_scoreboard():
+    player.score = 0
+    cpu.score = 0
+    return redirect("/play")
 
 def route_winner(winner, player, cpu):
-    sorted_scores = []
-    if player.score >= cpu.score:
-        sorted_scores.append(player)
-        sorted_scores.append(cpu)
-    else:
-        sorted_scores.append(cpu)
-        sorted_scores.append(player)
     if winner == False:
         return redirect("/")
-    elif winner == player:
-        player.score += 1
+    elif winner is None:
+        scores = sort_scores()
         return render_template(
-            "winner.html", title=f"{player.name} Wins!", winner=player, loser=cpu, scores=sorted_scores
-        )
-    elif winner == cpu:
-        cpu.score += 1
-        return render_template(
-            "loser.html", title=f"You lost!", winner=cpu, loser=player, scores=sorted_scores
+            "draw.html", title="It's a draw!", choice=player.choice, scores=scores
         )
     else:
-        return render_template("draw.html", title="It's a draw!", choice=player.choice, scores=sorted_scores)
+        winner.score += 1
+        scores = sort_scores()
+        if winner == player:
+            return render_template(
+                "winner.html",
+                title=f"{player.name} Wins!",
+                winner=player,
+                loser=cpu,
+                scores=scores,
+            )
+        elif winner == cpu:
+            return render_template(
+                "loser.html",
+                title=f"You lost!",
+                winner=cpu,
+                loser=player,
+                scores=scores,
+            )
