@@ -1,21 +1,37 @@
 {% extends "base.html" %}
 
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/play.css') }}">
+{% endblock %}
+
 {% block content %}
 <article>
-  <h2>Quick play</h2>
+  <h2>Pick a move, {{ player_name }}:</h2>
   <section>
     <form action="/get-choices" method="post">
       <input type="hidden" name="move" value="rock">
-      <input type="submit" value="✊" alt="Rock">
+      <input type="submit" value="✊" name="rock">
+      <label for="rock">Rock</label>
     </form>
     <form action="/get-choices" method="post">
       <input type="hidden" name="move" value="paper">
-      <input type="submit" value="✋" alt="Paper">
+      <input type="submit" value="✋" name="Paper">
+      <label for="paper">Paper</label>
     </form>
     <form action="/get-choices" method="post">
       <input type="hidden" name="move" value="scissors">
-      <input type="submit" value="✌️" alt="Scissors">
+      <input type="submit" value="✌️" name="Scissors">
+      <label for="scissors">Scissors</label>
     </form>
+    <!-- <form action="/get-choices" method="post">
+      <label for="move">Choose your move: </label>
+      <select name="move">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+      <input type="submit" value="Play">
+    </form> -->
   </section>
 </article>
 

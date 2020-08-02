@@ -1,20 +1,32 @@
 {% extends "base.html" %}
 
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+{% endblock %}
+
 {% block content %}
 <article>
   {% block results %}
   {% endblock %}
   
   <aside>
-    <h3>Score</h3>
     <ul id="scores">
+      <li><strong>Scoreboard</strong></li>
       {% for score in scores %}
-      <li><span>{{ score.name }}: </span><span><strong>{{ score.score }}</strong></span></li>
+      <li>
+        <span>{{ score.name }}: </span>
+        <span>
+          <strong>{{ score.score }}</strong>
+        </span>
+      </li>
       {% endfor %}
+      <li>
+        <a href="/reset-scores" id="reset_link">Reset Scores</a>
+      </li>
     </ul>
   </aside>
   <footer>
-    <a href="/play">Play again?</a>
+    <a href="/play" id="play_again">Play again?</a>
   </footer>
 </article>
 {% endblock %}
