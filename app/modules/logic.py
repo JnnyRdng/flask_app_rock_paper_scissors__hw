@@ -7,6 +7,7 @@ player_name = "Player"
 player = Player(player_name, "rock")
 cpu = Player("Computer", "rock")
 
+
 def sort_scores():
     sorted_scores = []
     if player.score >= cpu.score:

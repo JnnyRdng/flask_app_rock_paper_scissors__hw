@@ -44,11 +44,13 @@ def get_choices():
     winner = game.play_round(player, cpu)
     return route_winner(winner, player, cpu)
 
+
 @app.route("/reset-scores")
 def reset_scoreboard():
     player.score = 0
     cpu.score = 0
     return redirect("/play")
+
 
 def route_winner(winner, player, cpu):
     if winner == False:
