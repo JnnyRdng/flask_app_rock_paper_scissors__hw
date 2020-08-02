@@ -1,27 +1,7 @@
 {% extends "base.html" %}
 
 {% block style %}
-
-<style>
-  body>article>main>article {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-  }
-  input[type="submit"] {
-    border-radius: 0px;
-    height: initial;
-    width: 100%;
-    font-size: initial;
-  }
-  form {
-    width: 60%;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-  }
-</style>
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -40,7 +20,7 @@
       <p><strong>Scissors</strong> beats <strong>Paper</strong></p>
       <p><strong>Paper</strong> beats <strong>Rock</strong></p>
     </aside>
-    
+
     <section>
       <h3>Ready to play?</h3>
       <form action="/set-name" method="post">
@@ -53,5 +33,4 @@
     </section>
   </main>
 </article>
-
 {% endblock %}

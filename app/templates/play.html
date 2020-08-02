@@ -6,7 +6,9 @@
 
 {% block content %}
 <article>
-  <h2>Pick a move, {{ player_name }}:</h2>
+  <header>
+    <h2>Pick a move, {{ player_name }}:</h2>
+  </header>
   <section>
     <form action="/get-choices" method="post">
       <input type="hidden" name="move" value="rock">

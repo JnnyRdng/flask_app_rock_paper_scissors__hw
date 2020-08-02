@@ -1,3 +1,15 @@
+body>main>article>section {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+body>main>article>section>form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
 input[type=submit] {
     width: 260px;
     height: 260px;
@@ -6,14 +18,6 @@ input[type=submit] {
     outline: none;
 }
 
-/* input[type=submit]:hover {
-    background-color: var(--dark-purple);
-}
-*/
 input[type=submit]:focus {
     border: 4px solid var(--mango-tango);
 }
-/* 
-input[type=submit]:active {
-    background-color: var(--mango-tango);
-} */

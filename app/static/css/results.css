@@ -21,6 +21,7 @@ body>main>article {
     grid-template-rows: 1fr 3fr 3fr;
     column-gap: 2em;
 }
+
 #scores {
     list-style: none;
     min-width: 160px;
@@ -30,6 +31,7 @@ body>main>article {
     display: flex;
     justify-content: space-between;
 }
+
 #reset_link {
     display: block;
     width: 100%;
@@ -40,20 +42,21 @@ body>main>article {
     background-color: var(--cedar-chest);
     text-decoration: none;
 }
+
 #reset_link:hover {
     background-color: var(--mango-tango);
 }
+
 #play_again {
     display: block;
     width: 100%;
-    /* margin: 5px auto; */
-    /* padding: 200px; */
     padding: 4px;
     text-align: center;
     color: var(--floral-white);
     background-color: var(--english-violet);
     text-decoration: none;
 }
+
 #play_again:hover {
     background-color: var(--dark-purple);
 }
