@@ -1,0 +1,19 @@
+input[type=submit] {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    font-size: 4em;
+    outline: none;
+}
+
+/* input[type=submit]:hover {
+    background-color: var(--dark-purple);
+}
+*/
+input[type=submit]:focus {
+    border: 4px solid var(--mango-tango);
+}
+/* 
+input[type=submit]:active {
+    background-color: var(--mango-tango);
+} */
